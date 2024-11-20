@@ -1,4 +1,4 @@
-    <template>
+<template>
   <div class="container">
     <h1 class="text-start">Listado comunas |
       <button @click="newComuna()"
@@ -48,18 +48,18 @@ export default {
     return {
       comunas: []
     }
-},
+  },
   methods: {
     deleteComuna(codigo) {
       Swal.fire({
-        title: Do you want to delete the Comuna with id ${codigo}?,
+        title: `Do you want to delete the Comuna with id ${codigo}?`,
         showCancelButton: true,
         confirmButtonText: 'Delete',
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           //Swal.fire('Saved!', '', 'success')
-          axios.delete(http://127.0.0.1:8000/api/comunas/${codigo})
+          axios.delete(`http://127.0.0.1:8000/api/comunas/${codigo}`)
             .then(response => {
               if (response.data.success) {
                 Swal.fire('Deleted!', '', 'success')
@@ -70,7 +70,7 @@ export default {
       })
     },
     editComuna(id) {
-      this.$router.push({ name: 'EditarComuna', params: { id: ${id} } })
+      this.$router.push({ name: 'EditarComuna', params: { id: `${id}` } })
     },
     newComuna() {
       this.$router.push({ name: 'NuevaComuna' })

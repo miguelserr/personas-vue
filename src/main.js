@@ -17,4 +17,7 @@ library.add(faBuilding);
 library.add(faBank);
 library.add(faPlus);
 
-createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(router).mount('#app');
+createApp(App)
+  .component('font-awesome-icon', FontAwesomeIcon)
+  .use(router)
+  .mount('#app');
